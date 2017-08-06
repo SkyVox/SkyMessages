@@ -1,0 +1,29 @@
+name: SkyMessages
+version: 1.0
+author: [SkyVox]
+description: Set up your time and your messages to send for all players on the server.
+
+main: me.skyvox.smessages.Sky
+
+commands:
+    clearchat:
+      usage: /<Command>
+      aliases: [cc]
+      description: Use this command to clear your chat.
+    automessageadmin:
+      usage: /<Command> help
+      aliases: [ama]
+      description: Use this command to change config.yml settings.
+    shout:
+      usage: /<Command> help
+      description: Use this command to send message for everyone on the server.
+    warning:
+      usage: /<Command> help
+      description: Use this command to send a warning for the server.
+    warn:
+      usage: /<Command> help
+      description: Use this command to send a warn for a specific player.
+    automessage:
+      usage: /<Command> help
+      aliases: [am]
+      description: Use this command to enable or disable AutoMessage.

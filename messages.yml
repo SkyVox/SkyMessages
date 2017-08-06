@@ -1,0 +1,26 @@
+#This time is: fadeIn, stay, fadeOut. (title)
+Time: 20,5,20
+Messages:
+  #0 = Chat example.
+  0:
+    #Leave this option 'true' to send a message on player screen.
+    title: false
+    message:
+      - '&f&m----------'
+      - '&3Hey, %playerName% &cThis is a example message.'
+      - '&f&m----------'
+  #1 = Title example.
+  1:
+    title: true
+    #Leave 'null' for no message.
+    title-message: 'null'
+    subtitle-message: '&7This is a screen message. &c:D'
+  #2 = Chat and Title example.
+  2:
+    title: true
+    message:
+      - '&f&m----------'
+      - '&3Hey, %playerName% &cThis is a example message.'
+      - '&f&m----------'
+    title-message: 'null'
+    subtitle-message: '&7This is a screen message. &c:D'

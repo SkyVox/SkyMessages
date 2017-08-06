@@ -1,0 +1,127 @@
+#This is no permission message, when any player tries to do something that is not allowed will show this message below.
+Insufficient-Permission: '&cYou do not have permission.'
+#This will show just when a specific player is offline.
+Offline-Player: '&cThis player is not online'
+#This will show when plugin is reloaded.
+Reload-Message: '&eSkyMessages &chas been reloaded.'
+
+AutoMessageSettings:
+  messages:
+    start-for-everyone: '&aYou have enabled Auto-Message!'
+    disable-for-everyone: '&cYou have disabled Auto-Message!'
+    enable-for-a-player: '&aYou have been enabled Auto-Message for %targetName%!'
+    disabled-for-a-player: '&cYou have been disabled Auto-Message for %targetName%!'
+    already-enabled: '&cAuto-Message is already on.'
+    already-disabled: '&cAuto-Message is already off.'
+  #This is how the messages will be sent in the chat.
+  #Existing types: ['random', 'order']
+  send-type: 'random'
+  #messages-delay is the delay to send the message for a player.
+  #This delay is in seconds.
+  messages-delay: 300
+  #Leave this option 'true' to enable AutoMessage when player join the server.
+  enable-when-player-join: true
+  #Leave this option 'true' to disable AutoMessage when player quit the server.
+  #Recommended: 'false'
+  disable-when-quit: false
+  #Leave this option 'true' to enable Auto-Message for everyone when the server start up.
+  enable-when-server-start: true
+  #This is the help command message.
+  help:
+    - '&aAuto-message command:'
+    - '&e/automessage on &b- Enable Auto-message.'
+    - '&e/automessage on <player> &b- Enable Auto-message for a specific player.'
+    - '&e/automessage off &b- Disable Auto-message.'
+    - '&e/automessage off <player> &b- Disable Auto-message for a specific player.'
+    - ''
+    - '&e/automessageadmin help &b- Change plugin settings.'
+    - ''
+    - '&cAliases: &7[am, ama]'
+    
+AutoMessageAdmin:
+  #This is the help command message.
+  help:
+    - '&aAuto-Message-Admin command:'
+    - '&e/automessageadmin max <amount> &b- Change the max-players who chan join on server.'
+    - '&e/automessageadmin reload &b- Reload all .yml files.'
+  
+
+Warning:
+  #If you disable this option the command will cannot be executed.
+  warning-command: true
+  #This time is: fadeIn, stay, fadeOut. (This will only executed with the command: '/warning title').
+  time: 20,5,20
+  #If you leave is-title 'true' will show this message below.
+  title: '&c&lWarning&8: &c%message%'
+  #If you leave is-title 'false' will show this message below.
+  chat: '&c&lWarning&8: &c%message%'
+  #This is the help command message.
+  help:
+    - '&aWarning command:'
+    - '&e/warning <message> &b- Send a warning to everyone on the server.'
+    - '&e/warning title <message> &b- Send a warning on player screen.'
+
+Shout:
+  #If you disable this option the command will cannot be executed.
+  shout-command: true
+  #This time is: fadeIn, stay, fadeOut. (This will only executed with the command: '/shout title').
+  time: 20,5,20
+  #If you leave is-title 'true' will show this message below.
+  title: '&cMyServer> &3%message%'
+  #If you leave is-title 'false' will show this message below.
+  chat: '&cMyServer> &3%message%'
+  #This is the help command message.
+  help:
+    - '&aShout command:'
+    - '&e/shout <message> &b- Send a message to everyone on the server.'
+    - '&e/shout title <message> &b- Send a title to everyone on the server.'
+
+#This will send a warn for a specific player.
+Warn:
+  #This is the answer, when you perform the command.
+  reply: '&cYou warned &3%targetName%'
+  #If you disable this option the command will cannot be executed.
+  warn-command: true
+  #This time is: fadeIn, stay, fadeOut. (This will only executed with the command: '/shout title').
+  time: 20,5,20
+  #This is the help command message.
+  help:
+    - '&aWarn command:'
+    - '&e/warn <player> <warn> &b- Send a Warn for a specific player.'
+    - '&e/warn title <player> <warn> &b- Send a Warn for a specific player on his screen.'
+
+#You can block commands on the server.
+#If the command is in this list only those who have the bypass permission will be able to execute the command.
+Blockes-Cmds:
+  error-message: '&cThis command does not exist.'
+  commands:
+    - '/example-command-1'
+    - '/example-command-2'
+
+#Server motd.
+Motd:
+  #It will show one more player on max players.
+  one-more-slot: false
+  #This is to enable the max-players.
+  max-enabled: false
+  #This is the max players who can join on your server. You can change this number in-game, Just use: "%command%"
+  max-players: 159
+  #enable this to show your message on your server motd.
+  enabled: false
+  line-1: '&3Welcome to my first server!'
+  line-2: '&aThis is the second line'
+
+#This is what will show when someone type the command: "/clearchat"
+Clear-Chat-Message: '' #Leave it empty for no message.
+
+#Mensagens when player join or quit.
+JoinAndQuit:
+  #If you leave this option 'true', when this player join on server will check if he has a permission before send a join or quit message.
+  #Permissions - skymessages.join (when player join), skymessages.quit (when player quit), skymessages.admin (bypass).
+  need-permission: false
+  #Leave this option 'false' to don't show join message.
+  join-enabled: true
+  join-message: '&e[&a+&e] &b%playerName%'
+  #Leave this option 'false' to don't show quit message.
+  quit-enabled: true
+  quit-message: '&e[&c-&e] &b%playerName%'
