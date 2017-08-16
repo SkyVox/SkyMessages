@@ -1,5 +1,5 @@
 name: SkyMessages
-version: 1.0
+version: 1.3
 author: [SkyVox]
 description: Set up your time and your messages to send for all players on the server.
 
@@ -27,3 +27,13 @@ commands:
       usage: /<Command> help
       aliases: [am]
       description: Use this command to enable or disable AutoMessage.
+    announce:
+      usage: /<Command> help
+      description: Send a announce for everyone on the server.
+    broadcast:
+      usage: /<Command> help
+      aliases: [bc]
+      description: Send a Broadcast message.
+    fake:
+      usage: /<Command> help
+      description: Fake System.

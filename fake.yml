@@ -1,0 +1,28 @@
+Fake:
+  Messages:
+    success-fake: '&cYou send a fake action to %targetName%'
+    fake-op: '&eYou are now OP!'
+    fake-deop: '&eYou are no longer OP!'
+    fake-join: '&e%targetName% joined!'
+    fake-quit: '&e%targetName% left!'
+    fake-ban:
+      - '&e----------'
+      - '&cYou will be banned in some seconds..'
+      - '&e----------'
+    #Gamemode: use, %gamemode% to get the fake gamemode.
+    fake-gm: '&eYour game mode has been updated.'
+    slap: '&eWait.. I can fly?'
+    fake-reload:
+      - '&aReload complete.'
+  #This is the help command message.
+  help:
+    - '&aFake command:'
+    - '&e/fake help &b- Print this help message.'
+    - '&e/fake op <player> &b- Sends a fake op for a player.'
+    - '&e/fake deop <player> &b- Sends a fake deop for a player.'
+    - '&e/fake join <player> &b- Make someone join from the server.'
+    - '&e/fake quit <player> &b- Make someone quit from the server.'
+    - '&e/fake ban <player> &b- Fake ban.'
+    - '&e/fake gm <player> <gamemode> &b- Fake gamemode change.'
+    - '&e/fake slap <player> &b- Launches a player to sky.'
+    - '&e/fake reload &b- Fake reload the server.'

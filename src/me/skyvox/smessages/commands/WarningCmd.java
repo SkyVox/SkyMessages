@@ -45,7 +45,7 @@ public class WarningCmd implements CommandExecutor {
 					help(sender);
 				}
 				return true;
-			} else if (args.length >= 2) {
+			} else if (args.length >= 1) {
 				StringBuilder strB = new StringBuilder();
 				for (int i = 0; i < args.length; i++) {
 					strB.append(args[i] + " ");

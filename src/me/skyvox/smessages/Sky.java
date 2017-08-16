@@ -5,15 +5,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.skyvox.smessages.automessage.AutoMessageCmd;
 import me.skyvox.smessages.automessage.AutoMessageManager;
+import me.skyvox.smessages.commands.AnnounceCmd;
 import me.skyvox.smessages.commands.AutoMessageAdminCmd;
+import me.skyvox.smessages.commands.BroadcastCmd;
 import me.skyvox.smessages.commands.ClearChatCmd;
+import me.skyvox.smessages.commands.FakeCmd;
 import me.skyvox.smessages.commands.ShoutCmd;
 import me.skyvox.smessages.commands.WarnCmd;
 import me.skyvox.smessages.commands.WarningCmd;
 import me.skyvox.smessages.files.ConfigFile;
+import me.skyvox.smessages.files.FakeFile;
 import me.skyvox.smessages.files.MessagesFile;
 import me.skyvox.smessages.listeners.CommandPreprocess;
 import me.skyvox.smessages.listeners.GeneralListeners;
+import me.skyvox.smessages.listeners.fake.FakeListeners;
 import me.skyvox.smessages.utils.Update;
 
 public class Sky extends JavaPlugin {
@@ -32,15 +37,18 @@ public class Sky extends JavaPlugin {
 		sky = this;
 		ConfigFile.setup();
 		MessagesFile.setup();
+		FakeFile.setup();
 		automessage = new AutoMessageManager();
 		insufficientPermission = ConfigFile.get().contains("Insufficient-Permission") ? ChatColor.translateAlternateColorCodes('&', ConfigFile.get().getString("Insufficient-Permission")) : ChatColor.RED + "You do not have permission.";
 		
 		getServer().getPluginManager().registerEvents(new GeneralListeners(), this);
 		getServer().getPluginManager().registerEvents(new CommandPreprocess(), this);
+		getServer().getPluginManager().registerEvents(new FakeListeners(), this);
 		
 		getCommand("clearchat").setExecutor(new ClearChatCmd());
 		getCommand("automessageadmin").setExecutor(new AutoMessageAdminCmd());
 		getCommand("automessage").setExecutor(new AutoMessageCmd());
+		getCommand("fake").setExecutor(new FakeCmd());
 		if ((ConfigFile.get().contains("Shout.shout-command")) && (ConfigFile.get().getString("Shout.shout-command").equalsIgnoreCase("true"))) {
 			getCommand("shout").setExecutor(new ShoutCmd());
 		}
@@ -49,6 +57,12 @@ public class Sky extends JavaPlugin {
 		}
 		if ((ConfigFile.get().contains("Warn.warn-command")) && (ConfigFile.get().getString("Warn.warn-command").equalsIgnoreCase("true"))) {
 			getCommand("warn").setExecutor(new WarnCmd());
+		}
+		if ((ConfigFile.get().contains("Broadcast.broadcast-command")) && (ConfigFile.get().getString("Broadcast.broadcast-command").equalsIgnoreCase("true"))) {
+			getCommand("broadcast").setExecutor(new BroadcastCmd());
+		}
+		if ((ConfigFile.get().contains("Announce.announce-command")) && (ConfigFile.get().getString("Announce.announce-command").equalsIgnoreCase("true"))) {
+			getCommand("announce").setExecutor(new AnnounceCmd());
 		}
 		
 		if ((ConfigFile.get().contains("AutoMessageSettings.enable-when-server-start")) && (ConfigFile.get().getString("AutoMessageSettings.enable-when-server-start").equalsIgnoreCase("true"))) {

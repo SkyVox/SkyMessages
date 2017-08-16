@@ -76,6 +76,40 @@ Shout:
     - '&e/shout <message> &b- Send a message to everyone on the server.'
     - '&e/shout title <message> &b- Send a title to everyone on the server.'
 
+Broadcast:
+  #If you disable this option the command will cannot be executed.
+  broadcast-command: true
+  #This time is: fadeIn, stay, fadeOut. (This will only executed with the command: '/broadcast title').
+  time: 20,5,20
+  #If you use: '/broadcast title <message>' will be send the Title message below.
+  title: '&cBroadcast> &3%message%'
+  #If you use: '/broadcast <message>' will be send this Chat message below.
+  chat: '&cBroadcast> &3%message%'
+  #This is the help command message.
+  help:
+    - '&aBroadcast command:'
+    - '&e/broadcast <message> &b- Send a message to everyone on the server.'
+    - '&e/broadcast title <message> &b- Send a title to everyone on the server.'
+
+#This command is a good command to VIP or normal players announce his shop or something on the server.
+Announce:
+  #If you disable this option the command will cannot be executed.
+  announce-command: true
+  announce-title: false
+  #This time is: fadeIn, stay, fadeOut. (This will only executed if 'announce-title is equals 'true'').
+  time: 20,5,20
+  #This is the prefix. (this prefix will just be seen if 'announce-title is equals 'false'')
+  prefix:
+    - ''
+    - '   &cAnnounce&8: &7%message%'
+    - ''
+  #If ('announce-title is equals 'true'' this below will be the prefix.)
+  title-prefix: '&cAnnounce&8: &7%message%'
+  #This is the help command message.
+  help:
+    - '&aAnnounce command:'
+    - '&e/announce <message> &b- Send a message to everyone on the server.'
+
 #This will send a warn for a specific player.
 Warn:
   #This is the answer, when you perform the command.
@@ -122,6 +156,14 @@ JoinAndQuit:
   #Leave this option 'false' to don't show join message.
   join-enabled: true
   join-message: '&e[&a+&e] &b%playerName%'
+  #This will show a title when player join on server.
+  title-when-join: false
+  time: 20,5,20
+  #You can use title and subtitle, you need use a message like this: "my title <sub/> my subtitle"
+  title-message: '&3Welcome back %playerName%! <sub/> &9Subtitle :D'
+  join-player-message:
+    - '&7Welcome back %playerName%'
+    - '&7--'
   #Leave this option 'false' to don't show quit message.
   quit-enabled: true
   quit-message: '&e[&c-&e] &b%playerName%'

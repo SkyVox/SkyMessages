@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 
 import me.skyvox.smessages.Sky;
 import me.skyvox.smessages.files.ConfigFile;
+import me.skyvox.smessages.files.FakeFile;
 import me.skyvox.smessages.files.MessagesFile;
 
 public class AutoMessageAdminCmd implements CommandExecutor {
@@ -41,7 +42,11 @@ public class AutoMessageAdminCmd implements CommandExecutor {
 		} else if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("rl")) {
 			if (sender.hasPermission("skymessages.reload") || sender.hasPermission("skymessages.admin")) {
 				MessagesFile.reload();
+				MessagesFile.save();
 				ConfigFile.reload();
+				ConfigFile.save();
+				FakeFile.reload();
+				FakeFile.save();
 				sender.sendMessage(ConfigFile.get().contains("Reload-Message") ? ChatColor.translateAlternateColorCodes('&', ConfigFile.get().getString("Reload-Message")) : ChatColor.YELLOW + "SkyMessages " + ChatColor.RED + "has been reloaded.");
 			} else {
 				sender.sendMessage(Sky.getInstance().insufficientPermission);
